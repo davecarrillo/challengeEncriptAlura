@@ -1,6 +1,9 @@
-/* body {
-    background-color: darkgray;
-} */
+body {
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    background: #F3F5FC;
+}
 #contenedor-logo {
     display: flex;
     flex-direction: column;
@@ -13,6 +16,13 @@
     left: 40px;
     top: 40px;
 }
+.logo {
+    position: absolute;
+    left: 36.67%;
+    right: 37.43%;
+    top: 0%;
+    bottom: 0%;
+}
 #contenedor-mensaje-usuario {
     box-sizing: border-box;
     position: absolute;
@@ -23,8 +33,8 @@
 
 }
 .mensaje-usuario {
-    width: 577px;
-    height: 48px;
+    width: 576px;
+    height: 47px;
     border: 0px;
     margin: 0px;
     padding: 0px;
@@ -34,4 +44,25 @@
     font-size: 32px;
     line-height: 150%;
     color: #0A3871;
+}
+#advertencia-minusculas {
+    position: relative;
+    display: inline-block;
+    left: 240px;
+    top: 851px;
+    width: 230px;
+    height: 19px;
+    padding: 0px;
+    gap: 8px;
+}
+.advertencia-minusculas {
+    position: absolute;
+    position: absolute;
+    width: 229px;
+    height: 18px;   
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%; 
 }
