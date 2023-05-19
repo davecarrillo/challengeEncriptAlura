@@ -12,11 +12,15 @@ const letrasEncriptadas = new Map([
     ['u', 'ufat']
 ]);
 
-botonEncriptar.addEventListener("click", validarMensaje);
-botonDesencriptar.addEventListener("click", validarMensaje);
+botonEncriptar.addEventListener("click", () => {
+    validarMensaje("encriptar")
+});
+botonDesencriptar.addEventListener("click", () => {
+    validarMensaje("desencriptar")
+});
 
 // Funcion que verifica que el mensaje ingresado por el usuario sea válido
-function validarMensaje() {
+function validarMensaje(accion) {
     let mensajeRecibido = mensajeUsuario.value.toLowerCase();
     // Verifica que el texto no tenga numeros y muestra mensaje de error
     if (/\d/.test(mensajeRecibido)) {
@@ -45,15 +49,27 @@ function validarMensaje() {
         </div>`
     }
     // Si el mensaje es correcto se llama la funcion encriptarTexto y se almacena el mensaje encriptado en la variable mensaje y lo muestra en el area de mensaje encriptado
-    else {
+    if(accion === "encriptar") {
         let mensaje = encriptarTexto(mensajeRecibido);
         contenedorMensaje.innerHTML = `<p>${mensaje}</p><br> <button id="boton-copiar">Copiar</button>`;
-        console.log(mensaje);
+        // console.log(mensaje);
         return;
+        
+    } else if(accion === "desencriptar") {
+        let mensajeDesencriptado = desEncriptarMensaje(mensajeRecibido);
+        contenedorMensaje.innerHTML = `<p>${mensajeDesencriptado}</p><br> <button id="boton-copiar">Copiar</button>`;
     }
 }
 // Funcion que encripta el texto, recibe por parametro el texto ingresado por el usuario y retorna el mensaje encriptado.
 function encriptarTexto(texto) {
+    // if(esTextoEncriptado(texto)) {
+    //     contenedorMensaje.innerHTML = `<img class="muñeco" src="./assets/img/Muñeco.png" alt="imagen-persona-buscando">
+    //     <div id="mensajes-predeterminados">
+    //         <p class="primer-parrafo">El mensaje ya está encriptado</p>
+    //         <p class="primer-parrafo">Ingresa otro mensaje</p>
+    //     </div>`;
+    //     return;
+    // } 
     let mensajeEncriptado = ""; //Se inicializa variable con string vacio
     for(let i = 0; i < texto.length; i++) {
         let caracter = texto[i]; // Declaro la variable caracter que almacenara la letra correspondiente a cada iteracion
@@ -77,7 +93,20 @@ function agregarLetrasEncriptadas(vocal) {
     }
     return vocal;
 }
+// // Función auxiliar para verificar si el texto ya está encriptado
+// function esTextoEncriptado(texto) {
+//     const valoresEncriptados = Array.from(letrasEncriptadas.values());
+//     return valoresEncriptados.some(valor => texto.includes(valor));
+// }
 
+// Funcion para desencriptar mensaje
+function desEncriptarMensaje(mensaje) {
+    let mensajeDesencriptado = mensaje;
+    letrasEncriptadas.forEach((valor, clave) => {
+        mensajeDesencriptado = mensajeDesencriptado.split(valor).join(clave);
+    })
+    return mensajeDesencriptado
+}
 
 // function actualizarContMensaje() {
 //     contenedorMensajeUsuario.innerHTML = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae minima debitis iste vero quis! Voluptatum odio, rem dolore aperiam inventore facere voluptas, nesciunt autem, illum explicabo ut delectus ea animi.`
