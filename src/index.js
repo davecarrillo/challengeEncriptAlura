@@ -44,6 +44,8 @@ function validarMensaje(accion) {
         } else {
             let mensaje = encriptarTexto(mensajeRecibido);
             contenedorMensaje.innerHTML = `<p>${mensaje}</p><br> <button id="boton-copiar">Copiar</button>`;
+            const botonCopiar = document.getElementById("boton-copiar");
+            botonCopiar.addEventListener("click", () => copiar(mensaje));
             return;
         }   
     } 
@@ -55,10 +57,22 @@ function validarMensaje(accion) {
         } else {
             let mensajeDesencriptado = desEncriptarMensaje(mensajeRecibido);
             contenedorMensaje.innerHTML = `<p>${mensajeDesencriptado}</p><br> <button id="boton-copiar">Copiar</button>`;
+            const botonCopiar = document.getElementById("boton-copiar");
+            botonCopiar.addEventListener("click", () => copiar(mensajeDesencriptado));
             return;
         }
     }
 }
+
+async function copiar(texto) {
+    try {
+        await navigator.clipboard.writeText(texto);
+        console.log("Texto copiado al portapapeles");
+    } catch (error) {
+        console.error("Error al copiar el texto:", error);
+    }
+}
+
 // Funcion que encripta el texto, recibe por parametro el texto ingresado por el usuario y retorna el mensaje encriptado.
 function encriptarTexto(texto) {
     let mensajeEncriptado = ""; //Se inicializa variable con string vacio
