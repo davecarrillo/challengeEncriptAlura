@@ -31,9 +31,9 @@ body {
     display: flex;
     flex-direction: column;
     width: 32%;
-    height: 5em;
+    height: 8em;
     left: 15.3%;
-    top: 10.5em;   
+    top: 9.5em;   
 }
 .mensaje-usuario::placeholder {
     font-family: 'Inter';
@@ -61,17 +61,20 @@ body {
     line-height: 150%;
     color: #0A3871;
 }
-#advertencia-minusculas {
+#contenedor-advertencia-minusculas {
     position: absolute;
-    display: inline-block;
-    left: 15em;
-    top: 53.1em;
-    width: 14.3em;
-    height: 1.1em;
+    display: flex;
+    flex-wrap: wrap;
+    left: 15.3%;
+    top: 45em;
+    width: 32%;
+    height: 3em;
     padding: 0px;
-    gap: 8px;
+    margin: 0;
 }
 .advertencia-minusculas {
+    width: 100%;
+    height: 100%;
     position: absolute;
     font-size: 0.9em;
     font-family: 'Inter';
@@ -80,19 +83,20 @@ body {
     line-height: 150%; 
 }
 #container-botones {
+    margin: 0;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     padding: 0px;
     gap: 1.5em;
     position: absolute;
-    width: 42.5em;
+    width: 35%;
     height: 4.2em;
-    left: 15em;
-    top: 55.3em;
+    left: 15%;
+    top: 49.3em;
 }
 .boton-encriptar {
-    width: 20.5em;
+    width: 50%;
     height: 4.1em;
     padding: 1.5em;
     gap: 0.5em;
@@ -106,8 +110,12 @@ body {
     text-align: center;
     color: #FFFFFF;
 }
+.boton-encriptar:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
 .boton-desencriptar {
-    width: 20.5em;
+    width: 50%;
     height: 4.1em;
     padding: 1.5em;
     gap: 0.5em;
@@ -121,6 +129,10 @@ body {
     line-height: 1.1em;
     text-align: center;
     color: #0A3871;
+}
+.boton-desencriptar:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
 #contenedor-mensaje-procesado {
     background: #FFFFFF;
