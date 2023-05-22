@@ -1,122 +1,173 @@
 body {
     position: relative;
-    width: 1440px;
-    height: 1024px;
+    width: 100%;
+    min-height: 100vh;
     background: #F3F5FC;
 }
 #contenedor-logo {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 0px;
-    gap: 40px;
+    justify-content: center;
+    padding: 0;
+    gap: 2.5em;
     position: absolute;
-    width: 120px;
-    height: 48px;
-    left: 40px;
-    top: 40px;
+    width: 11%;
+    height: 3em;
+    left: 2.5em;
+    top: 2.5em;
 }
 .logo {
+    width: 20%;
     position: absolute;
-    left: 36.67%;
-    right: 37.43%;
-    top: 0%;
-    bottom: 0%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 #contenedor-mensaje-usuario {
-    box-sizing: border-box;
+    border: 2.5px solid #0A3871;
+    border-radius: 4px;
+    margin: 0;
     position: absolute;
-    width: 577px;
-    height: 48px;
-    left: 240px;
-    top: 168px;
-
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+    height: 8em;
+    left: 15.3%;
+    top: 8.5em;   
 }
+<<<<<<< HEAD
 .mensaje-usuario {
     width: 576px;
     height: auto;
     border: 0px;
     margin: 0px;
     padding: 0px;
+=======
+.mensaje-usuario::placeholder {
+>>>>>>> medidas-relativas
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
+    font-weight: 200;
+    font-size: 1em;
     line-height: 150%;
     color: #0A3871;
 }
-#advertencia-minusculas {
-    position: relative;
-    display: inline-block;
-    left: 240px;
-    top: 851px;
-    width: 230px;
-    height: 19px;
-    padding: 0px;
-    gap: 8px;
+.mensaje-usuario:focus {
+    outline: none;
 }
-.advertencia-minusculas {
+.mensaje-usuario {
+    box-sizing: border-box;
     position: absolute;
-    position: absolute;
-    width: 229px;
-    height: 18px;   
+    width: 100%;
+    height: 100%;
+    border: 0;
+    margin: 0;
+    padding: 12px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 1.5em;
+    line-height: 150%;
+    color: #0A3871;
+}
+#contenedor-advertencia-minusculas {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    left: 15.3%;
+    top: 28em;
+    width: 32%;
+    height: 3em;
+    padding: 0px;
+    margin: 0;
+}
+.advertencia-minusculas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-size: 0.7em;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
     line-height: 150%; 
 }
 #container-botones {
+    margin: 0;
     display: flex;
+    flex-wrap: nowrap;
     flex-direction: row;
     align-items: flex-start;
     padding: 0px;
-    gap: 24px;
+    gap: 1.5em;
     position: absolute;
-    width: 680px;
-    height: 67px;
-    left: 240px;
-    top: 885px;
+    width: 45%;
+    height: 4em;
+    left: 15%;
+    top: 33em;
 }
 .boton-encriptar {
-    width: 328px;
-    height: 67px;
-    padding: 24px;
-    gap: 8px;
+    width: 50%;
+    height: 4.1em;
+    padding: 1.5em;
+    gap: 0.5em;
     background: #0A3871;
     border-radius: 24px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 1em;
+    line-height: 1.1em;
     text-align: center;
     color: #FFFFFF;
+    white-space: nowrap; 
+    text-overflow: ellipsis
+}
+.boton-encriptar:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    overflow: visible; 
+    text-overflow: clip;
 }
 .boton-desencriptar {
-    width: 328px;
-    height: 67px;
-    padding: 24px;
-    gap: 8px;
+    width: 50%;
+    height: 4.1em;
+    padding: 1.5em;
+    gap: 0.5em;
     background: #D8DFE8;
     border-radius: 24px;
     border: 1px solid #0A3871;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 1em;
+    line-height: 1.1em;
     text-align: center;
     color: #0A3871;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis
+}
+.boton-desencriptar:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    overflow: visible; 
+    text-overflow: clip;
 }
 #contenedor-mensaje-procesado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     background: #FFFFFF;
     position: absolute;
-    width: 400px;
-    height: 944px;
-    left: 1000px;
-    top: 40px;
+    width: 30%;
+    height: 95%;
+    left: 65%;
+    top: 2%;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border: 2px solid #0A3871;
     border-radius: 32px;
     font-family: 'Inter';
     font-style: normal;
@@ -126,40 +177,49 @@ body {
     color: #495057;
     padding: 32px;
 }
+.muñeco {
+    position: absolute;
+    width: 80%;
+    height: 50%;
+    top: 5%;
+    left: 11%;
+}
 #mensajes-predeterminados {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     padding: 0px;
-    gap: 16px;
+    gap: 1em;
     position: absolute;
-    width: 336px;
-    height: 122px;
-    left: 32px;
-    top: 619px;
+    width: 90%;
+    height: 30%;
+    margin: auto; 
+    top: 60%;
 }
 .primer-parrafo {
-    width: 336px;
-    height: 58px;
+    width: 90%;
+    height: 50%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 1.5em;
     line-height: 120%;
     text-align: center;
     color: #343A40
 }
 .segundo-parrafo {
-    width: 336px;
-    height: 48px;
+    width: 90%;
+    height: 50%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1em;
     line-height: 150%;
     text-align: center;
     color: #495057;
 }
+<<<<<<< HEAD
 .muñeco {
     position: absolute;
     width: 336px;
@@ -190,3 +250,5 @@ body {
     text-align: center;
     color: #0A3871;
 }
+=======
+>>>>>>> medidas-relativas
