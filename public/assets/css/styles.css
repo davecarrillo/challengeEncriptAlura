@@ -219,6 +219,9 @@ body {
     position: absolute;
     top: 0.5em;
     color: #495057;
+    white-space: wrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
 }
 #boton-copiar {
     position: absolute;
@@ -247,18 +250,44 @@ body {
     #contenedor-mensaje-usuario {
         width: 75%;
     }
+    #contenedor-advertencia-minusculas {
+        top: 45%;
+        width: 70%;
+    }
+    .advertencia-minusculas {
+        font-size: 1.2em;
+    }
     #container-botones {
         width: 75%;
+        top: 55%;
     }
     #contenedor-mensaje-procesado {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 75%;
         top: 65%;
         left: 15%;
-        height: 25%;
+        height: 20%;
+    }
+    .mensaje-procesado {
+        overflow: auto;
+        position: absolute;
+        text-align:justify;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 100%;
+        color: #495057;
     }
     #boton-copiar {
         position: absolute;
         width: 75%;
         top: 70%;
+    }
+    .muñeco {
+        left: 30%;
+        width: 30%;
     }
 }
