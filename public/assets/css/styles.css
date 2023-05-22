@@ -145,7 +145,7 @@ body {
     color: #0A3871;
     white-space: nowrap; 
     overflow: hidden; 
-    text-overflow: ellipsis
+    text-overflow: ellipsis;
 }
 .boton-desencriptar:hover {
     transform: scale(1.1);
@@ -154,14 +154,15 @@ body {
     text-overflow: clip;
 }
 #contenedor-mensaje-procesado {
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     background: #FFFFFF;
     position: absolute;
-    width: 30%;
-    height: 95%;
+    width: 25%;
+    height: 98%;
     left: 65%;
     top: 2%;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
@@ -201,7 +202,7 @@ body {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-size: 1.5em;
+    font-size: 1em;
     line-height: 120%;
     text-align: center;
     color: #343A40
@@ -216,4 +217,36 @@ body {
     line-height: 150%;
     text-align: center;
     color: #495057;
+}
+.mensaje-procesado {
+    width: 90%;
+    height: 50%;
+    box-sizing: border-box;
+    font-size: 1em;
+    position: absolute;
+    top: 0.5em;
+    color: #495057;
+}
+#boton-copiar {
+    position: absolute;
+    top: 83.2%;
+    width: 79%;
+    height: 5em;
+    background: #D8DFE8;
+    border-radius: 24px;
+    border: 1px solid #0A3871;
+    font-family: 'Inter';
+    font-style: normal;
+    line-height: 1.1em;
+    text-align: center;
+    color: #0A3871;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+#boton-copiar:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    overflow: visible; 
+    text-overflow: clip;
 }

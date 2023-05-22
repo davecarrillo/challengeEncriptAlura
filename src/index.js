@@ -43,7 +43,7 @@ function validarMensaje(accion) {
             return;
         } else {
             let mensaje = encriptarTexto(mensajeRecibido);
-            contenedorMensaje.innerHTML = `<p>${mensaje}</p><br> <button id="boton-copiar">Copiar</button>`;
+            contenedorMensaje.innerHTML = `<p class = "mensaje-procesado"> ${mensaje}</p><br> <button id="boton-copiar">Copiar</button>`;
             const botonCopiar = document.getElementById("boton-copiar");
             botonCopiar.addEventListener("click", () => copiar(mensaje));
             return;
@@ -56,7 +56,7 @@ function validarMensaje(accion) {
             return;
         } else {
             let mensajeDesencriptado = desEncriptarMensaje(mensajeRecibido);
-            contenedorMensaje.innerHTML = `<p>${mensajeDesencriptado}</p><br> <button id="boton-copiar">Copiar</button>`;
+            contenedorMensaje.innerHTML = `<p class = "mensaje-procesado">${mensajeDesencriptado}</p><br> <button id="boton-copiar">Copiar</button>`;
             const botonCopiar = document.getElementById("boton-copiar");
             botonCopiar.addEventListener("click", () => copiar(mensajeDesencriptado));
             return;
@@ -135,6 +135,6 @@ function mostrarMensajeError(mensaje, mensajeAdicional = "") {
     contenedorMensaje.innerHTML = `<img class="muñeco" src="./assets/img/Muñeco.png" alt="imagen-persona-buscando">
     <div id="mensajes-predeterminados">
         <p class="primer-parrafo">${mensaje}</p>
-        <p class="primer-parrafo">${mensajeAdicional}</p>
+        <p class="segundo-parrafo">${mensajeAdicional}</p>
     </div>`;
 }
