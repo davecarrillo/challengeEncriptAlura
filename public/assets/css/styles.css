@@ -37,13 +37,6 @@ body {
     left: 15.3%;
     top: 8.5em;   
 }
-.mensaje-usuario {
-    width: 576px;
-    height: auto;
-    border: 0px;
-    margin: 0px;
-    padding: 0px;
-}
 .mensaje-usuario::placeholder {
     font-family: 'Inter';
     font-style: normal;
@@ -249,4 +242,23 @@ body {
     cursor: pointer;
     overflow: visible; 
     text-overflow: clip;
+}
+@media (max-width: 1024px) {
+    #contenedor-mensaje-usuario {
+        width: 75%;
+    }
+    #container-botones {
+        width: 75%;
+    }
+    #contenedor-mensaje-procesado {
+        width: 75%;
+        top: 65%;
+        left: 15%;
+        height: 25%;
+    }
+    #boton-copiar {
+        position: absolute;
+        width: 75%;
+        top: 70%;
+    }
 }
