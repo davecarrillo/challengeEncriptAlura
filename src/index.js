@@ -115,7 +115,8 @@ function agregarLetrasEncriptadas(vocal) {
 // Función auxiliar para verificar si el texto ya está encriptado
 function esTextoEncriptado(texto) {
     const valoresEncriptados = Array.from(letrasEncriptadas.values());
-    return valoresEncriptados.some(valor => texto.includes(valor));
+    const expresionRegular = new RegExp(`\\b(${valoresEncriptados.join('|')})\\b`, 'i');
+    return expresionRegular.test(texto);  
 }
 // Función auxiliar para verificar si el texto ya está desencriptado
 function esTextoDesencriptado(texto) {
