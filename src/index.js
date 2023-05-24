@@ -114,15 +114,40 @@ function agregarLetrasEncriptadas(vocal) {
 }
 // Función auxiliar para verificar si el texto ya está encriptado
 function esTextoEncriptado(texto) {
-    const valoresEncriptados = Array.from(letrasEncriptadas.values());
-    const expresionRegular = new RegExp(`\\b(${valoresEncriptados.join('|')})\\b`, 'i');
-    return expresionRegular.test(texto);  
+    const valoresEncriptados = Array.from(letrasEncriptadas.values()); // Se crea un array de los valores del mapa letrasEncriptadas
+    const palabras = texto.split(' '); // Se crea el array palabras seccionando el mensaje recibido en palabras individuales
+    for (const palabra of palabras) { // Para cada palabra en el array palabras
+        let contador = 0; // Se inicializa contador en 0
+        for(const valorEncriptado of valoresEncriptados) { // Para cada valor dento del array valoresEncriptados
+            if(palabra.includes(valorEncriptado)) { // Cada que la palabra actual incluya un valor encriptado
+                contador++; // Se incrementa en uno a contador
+            }
+        }
+        console.log(contador);
+        if(contador > 1) { // Si contador tiene un valor mayor que uno significa que en la palabra correspondiente tiene dos o mas apariciones de algun valor de encriptacion 
+            return true; // se retorna true lo que significa que es un texto encriptado. Asi se da oportunidad a palabras que por casualidad contienen una secuencia de caracteres iguales 
+        }                // a los valores de encriptacion como "aire", "cobertor", "aproximes", "entero"
+    }
+    return false;  // Si no se tiene ninguna aparicion en contador o tiene una retorna false, indicando que es un texto desencriptado
 }
-// Función auxiliar para verificar si el texto ya está desencriptado
+// Función auxiliar para verificar si el texto ya está desencriptado 
 function esTextoDesencriptado(texto) {
-    const expresionRegular = /ai|enter|imes|ober|ufat/;
-    return !expresionRegular.test(texto);
-}
+    const valoresEncriptados = Array.from(letrasEncriptadas.values()); // Se crea un array de los valores del mapa letrasEncriptadas
+    const palabras = texto.split(' ');               // Se crea el array palabras seccionando el mensaje recibido en palabras individuales
+    for (const palabra of palabras) { // Para cada palabra en el array palabras
+        let contador = 0; // Se inicializa contador en 0
+        for(const valorEncriptado of valoresEncriptados) { // Para cada valor dento del array valoresEncriptados
+            if(palabra.includes(valorEncriptado)) { // Cada que la palabra actual incluya un valor encriptado
+                contador++; // Se incrementa en uno a contador
+            }
+        }
+        console.log(contador);
+        if(contador > 1) { // Si contador tiene un valor mayor que uno significa que en la palabra correspondiente tiene dos o mas apariciones de algun valor de encriptacion 
+            return false; // se retorna false lo que significa que es un texto encriptado. 
+        }    
+    }
+    return true; // Si no tiene ninguna aparicion de valores o tiene solo una se retorna true lo que significa que es un texto desencriptado
+}                // Asi se da oportunidad a palabras que por casualidad contienen una secuencia de caracteres iguales a los valores de encriptacion como "aire", "cobertor", "aproximes", "entero"
 // Funcion para desencriptar mensaje
 function desEncriptarMensaje(mensaje) {
     let mensajeDesencriptado = mensaje;
